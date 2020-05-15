@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './Header';
+import InventoryList from './InventoryList';
+import Item from '../../interfaces/Item';
 
 it('renders without crashing', () => {
+  const items: Item[] = [];
   const div = document.createElement('div');
-  ReactDOM.render(<Header />, div);
+  ReactDOM.render(<InventoryList
+    items={items}
+  />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

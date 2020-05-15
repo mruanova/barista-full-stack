@@ -1,54 +1,73 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mauricio Ruanova
 
-npx create-react-app mruanova-tsx --typescript
+## React and Typescript
+
+### `npm`
+
+npm install
+
+npm test
+
+npm start
+
+
+### `yarn`
 
 npm install -g yarn
 
-yarn add @material-ui/core
+yarn
 
-yarn add @material-ui/icons
+yarn test
 
 yarn start
 
-## Available Scripts
 
-In the project directory, you can run:
+## front-end
 
-### `npm start`
+http://barista-matic.s3-website-us-west-2.amazonaws.com/
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## back-end
 
-### `npm test`
+### AWS Lambda serveless functions node.js
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+lambda/getItems.js
 
-### `npm run build`
+lambda/getDrinks.js
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+lambda/putItems.js
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+lambda/putDrinks.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## AWS Dynamo DB
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### items
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+{
+  "cost": 0.75,
+  "id": 0,
+  "name": "coffee",
+  "units": 7
+}
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### drinks
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+{
+  "id": 0,
+  "name": "Coffee",
+  "cost": 0,
+  "receipt": null,
+  "cashier": null,
+  "timestamp": null,
+  "ingredients": [{
+      "itemId":0,
+      "units":3
+    },{
+      "itemId":3,
+      "units":1
+    },{
+      "itemId":5,
+      "units":1
+    }]
+}

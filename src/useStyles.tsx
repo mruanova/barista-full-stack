@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 export const useStyles = makeStyles(theme => ({
   app: {
-    textAlign: 'center'
   },
   root: {
     flexGrow: 1,
@@ -15,4 +14,8 @@ export const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
   },
-}));
+}),
+  { name: 'App' },
+);
+
+export default useStyles;
