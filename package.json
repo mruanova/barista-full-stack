@@ -20,9 +20,9 @@
     "node-notifier": "^9.0.1",
     "object-path": "^0.11.5",
     "react": "^16.13.1",
-    "react-dev-utils": "^11.0.4",
+    "react-dev-utils": "^12.0.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.3",
+    "react-scripts": "^5.0.1",
     "ssri": "^8.0.1",
     "typescript": "3.9.5",
     "websocket-extensions": "^0.1.4"
