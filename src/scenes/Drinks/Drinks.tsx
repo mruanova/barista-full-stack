@@ -4,7 +4,15 @@ import Drink from '../../interfaces/Drink';
 import Item from '../../interfaces/Item';
 import { isAvailable } from '../../utilities/isAvailable';
 import Action from '../../interfaces/Action';
-import { format } from 'date-fns';
+
+const formatTimestamp = (value: Date) => {
+    const month = `${value.getMonth() + 1}`.padStart(2, '0');
+    const day = `${value.getDate()}`.padStart(2, '0');
+    const year = value.getFullYear();
+    const hours = `${value.getHours()}`.padStart(2, '0');
+    const minutes = `${value.getMinutes()}`.padStart(2, '0');
+    return `${month}/${day}/${year} ${hours}:${minutes}`;
+};
 
 interface Props {
     drinks: Drink[];
@@ -23,7 +31,7 @@ const Drinks = (props: Props) => {
 
     /** sell drink and discount inventory items */
     const handleClick = (drink: Drink) => (_event: React.MouseEvent | React.KeyboardEvent) => {
-        drink.timestamp = format(new Date(), "MM/dd/yyyy hh:mm aaaaa'm'");
+        drink.timestamp = formatTimestamp(new Date());
         drink.receipt = Date.now().toString();
         drink.cashier = cashier;
         const action = new Action({ type: 'sale', sale: drink });
