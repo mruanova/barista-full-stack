@@ -1,13 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot, Root } from 'react-dom/client';
 import InventoryList from './InventoryList';
 import Item from '../../interfaces/Item';
 
 it('renders without crashing', () => {
   const items: Item[] = [];
   const div = document.createElement('div');
-  ReactDOM.render(<InventoryList
+  const root: Root = createRoot(div);
+  root.render(<InventoryList
     items={items}
-  />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  />);
+  root.unmount();
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot, Root } from 'react-dom/client';
 import Drinks from './Drinks';
 import Drink from '../../interfaces/Drink';
 import Item from '../../interfaces/Item';
@@ -8,10 +8,11 @@ it('renders without crashing', () => {
   const drinks: Drink[] = [];
   const items: Item[] = [];
   const div = document.createElement('div');
-  ReactDOM.render(<Drinks
+  const root: Root = createRoot(div);
+  root.render(<Drinks
     drinks={drinks}
     items={items}
     onHandleClick={() => { }}
-  />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  />);
+  root.unmount();
 });
